@@ -1,69 +1,69 @@
 {
-    "🌍": {
+    "externalCapacity": {
         "title": "hasExternalCapacity",
         "tooltipDescription": "The package use at least one Node.js dependency capable to communicate outside or to establish a listening server."
     },
-    "⚠": {
+    "warnings": {
         "title": "hasWarnings",
         "tooltipDescription": "The AST analysis has detected warnings (suspect import, unsafe regex ..)"
     },
-    "🐲": {
+    "nativeCode": {
         "title": "hasNativeCode",
         "tooltipDescription": "The package use native components (package, file, configuration)."
     },
-    "💎": {
+    "customResolver": {
         "title": "hasCustomResolver",
         "tooltipDescription": "The package has dependencies that are not packages."
     },
-    "📜": {
+    "noLicense": {
         "title": "hasNoLicense",
         "tooltipDescription": "The package does not seem to have a license."
     },
-    "📚": {
+    "multipleLicense": {
         "title": "hasMultipleLicenses",
         "tooltipDescription": "The package has multiple licenses in multiple files"
     },
-    "🔬": {
+    "minifiedCode": {
         "title": "hasMinifiedCode",
         "tooltipDescription": "The package seems to have files that are minified/uglified."
     },
-    "⛔️": {
+    "isDeprecated": {
         "title": "isDeprecated",
         "tooltipDescription": "The package is deprecated."
     },
-    "👥": {
+    "manyPublishers": {
         "title": "hasManyPublishers",
         "tooltipDescription": "The package has several publishers."
     },
-    "📦": {
+    "hasScript": {
         "title": "hasScript",
         "tooltipDescription": "has `post` and/or `pre` (un)install npm script"
     },
-    "🌲": {
+    "indirectDependencies": {
         "title": "hasIndirectDependencies",
         "tooltipDescription": "The package have indirect dependencies."
     },
-    "☁️": {
+    "isGit": {
         "title": "isGit",
         "tooltipDescription": "The package (project) is a git repository"
     },
-    "🚨": {
+    "vulnerabilities": {
         "title": "vulnerabilities",
         "tooltipDescription": "The package have one or many vulnerabilities."
     },
-    "👀": {
+    "missingOrUnusedDependency": {
         "title": "hasMissingOrUnusedDependency",
         "tooltipDescription": "A dependency is missing in package.json or a dependency is installed but never used!"
     },
-    "💀": {
+    "isDead": {
         "title": "isDead",
         "tooltipDescription": "The dependency has not received update from at least one year!"
     },
-    "⚔️": {
+    "bannedFile": {
         "title": "hasBannedFile",
         "tooltipDescription": "The project has at least one sensitive file."
     },
-    "⌚️": {
+    "outdated": {
         "title": "isOutdated",
         "tooltipDescription": "The current package version is not equal to the package latest version!"
     }
