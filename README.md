@@ -28,7 +28,24 @@ import * as flags from "@nodesecure/flags";
 ```
 
 ## API
-TBC
+
+If you wanna get a Set of flags title.
+
+```js
+import { getFlags, getManifest, getFlagFile } from "@nodesecure/flags";
+
+const flags = getFlags();
+// Return a Set of flags title
+
+const manifest = getManifest();
+// Return the manifest file
+
+async function getFlagFile() {
+  const flagFile = await getFlagFile('hasBannedFile');
+  return flagFile;
+}
+// Return the flagFile
+```
 
 ## License
 MIT
