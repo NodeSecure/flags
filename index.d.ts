@@ -25,9 +25,7 @@ declare namespace flags {
     tooltipDescription: string,
   }
 
-  interface Manifest {
-    [k: string]: FlagObject
-  }
+  type Manifest = Record<string, FlagObject>;
 
   export function getManifest(): Manifest
   export function getFlags(): Record<string, string>

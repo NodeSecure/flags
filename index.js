@@ -1,13 +1,12 @@
 // Import Node.js Dependencies
-import { createReadStream } from "fs";
+import * as fs from "fs";
 import { join } from "path";
 import { fileURLToPath } from "url";
-import { readFile } from "fs/promises";
 
 const __dirname = fileURLToPath(import.meta.url);
 
 const FLAGS = JSON.parse(
-  await readFile(
+  fs.readFileSync(
     new URL("src/manifest.json", import.meta.url)
   )
 );
@@ -24,9 +23,9 @@ export function getFlags() {
 
 // Read specific flag file
 export function getFlagFile(name) {
-  if (!name) {
+  if (typeof name !== "string") {
     throw new Error("You should provide a flag name");
   }
 
-  return createReadStream(join(__dirname, `../src/flags/${name}.html`));
+  return fs.createReadStream(join(__dirname, `../src/flags/${name}.html`));
 }
