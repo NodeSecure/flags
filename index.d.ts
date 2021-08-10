@@ -20,16 +20,19 @@ declare namespace flags {
     "hasBannedFile";
 
   interface FlagObject {
-    emoji: string,
-    title: string,
-    tooltipDescription: string,
+    /** An emoji to visually identify the anomaly **/
+    emoji: string;
+    /** Title (or name) of the flag **/
+    title: string;
+    /** Short description/warning of the anomaly **/
+    tooltipDescription: string;
   }
 
   type Manifest = Record<string, FlagObject>;
 
-  export function getManifest(): Manifest
-  export function getFlags(): Record<string, string>
-  export function getFlagFile(): ReadableStream
+  export function getManifest(): Manifest;
+  export function getFlags(): Record<string, string>;
+  export function getFlagFile(): ReadableStream;
 }
 
 export = flags;

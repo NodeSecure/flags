@@ -1,4 +1,6 @@
 import test from "tape";
+
+// Import Internal Dependencies
 import { getFlags, getManifest, getFlagFile } from "../index.js";
 
 // get flag

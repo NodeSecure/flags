@@ -1,14 +1,15 @@
 // Import Node.js Dependencies
-import * as fs from "fs";
-import { join } from "path";
+import fs from "fs";
+import path from "path";
 import { fileURLToPath } from "url";
 
-const __dirname = fileURLToPath(import.meta.url);
+// CONSTANTS
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const kFlagsPath = path.join(__dirname, "src", "flags");
 
+/** @type {flags.Manifest} **/
 const FLAGS = JSON.parse(
-  fs.readFileSync(
-    new URL("src/manifest.json", import.meta.url)
-  )
+  fs.readFileSync(new URL("src/manifest.json", import.meta.url))
 );
 
 // Export src/manifest.json
@@ -24,8 +25,9 @@ export function getFlags() {
 // Read specific flag file
 export function getFlagFile(name) {
   if (typeof name !== "string") {
-    throw new Error("You should provide a flag name");
+    throw new TypeError("You should provide a flag name");
   }
+  const fileName = path.extname(name) === ".html" ? name : `${name}.html`;
 
-  return fs.createReadStream(join(__dirname, `../src/flags/${name}.html`));
+  return fs.createReadStream(path.join(kFlagsPath, fileName));
 }

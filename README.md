@@ -24,21 +24,13 @@ $ yarn add @nodesecure/flags
 ## Usage example
 
 ```js
-import * as flags from "@nodesecure/flags";
-```
-
-## API
-
-See TypeScript definition file.
-
-```js
 import { getFlags, getManifest, getFlagFile } from "@nodesecure/flags";
 
-const flags = getFlags();
 // Return a Set of flags title
+const flags = getFlags();
 
-const manifest = getManifest();
 // Return the manifest file
+const manifest = getManifest();
 
 async function readableToString (readable) {
   let str = "";
@@ -50,12 +42,18 @@ async function readableToString (readable) {
   return str;
 }
 
-async function getFlagFile() {
-  const file = await getFlagFile('hasBannedFile')
-  return returnChunk(file)
-}
 // Return the flagFile
+async function getFlagFile() {
+  const readStream = getFlagFile("hasBannedFile");
+
+  return await readableToString(readStream);
+}
+const HTML = await getFlagFile();
 ```
+
+## API
+
+See TypeScript definition file.
 
 ## License
 MIT

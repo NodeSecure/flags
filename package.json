@@ -7,7 +7,8 @@
     "test": "cross-env esm-tape-runner 'test/**/*.js' | tap-monkey",
     "coverage": "c8 -r html npm test",
     "lint": "cross-env eslint index.js",
-    "check": "npm run lint && npm test"
+    "check": "npm run lint && npm test",
+    "generateFlags": "node scripts/generateFlags.js"
   },
   "repository": {
     "type": "git",
