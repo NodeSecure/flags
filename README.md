@@ -29,7 +29,7 @@ import * as flags from "@nodesecure/flags";
 
 ## API
 
-If you wanna get a Set of flags title.
+See TypeScript definition file.
 
 ```js
 import { getFlags, getManifest, getFlagFile } from "@nodesecure/flags";
