@@ -40,10 +40,14 @@ const flags = getFlags();
 const manifest = getManifest();
 // Return the manifest file
 
-async function returnChunk(readable) {
+async function readableToString (readable) {
+  let str = "";
+
   for await (const chunk of readable) {
-    return chunk.toString()
+    str += chunk;
   }
+
+  return str;
 }
 
 async function getFlagFile() {
