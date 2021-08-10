@@ -30,7 +30,7 @@ declare namespace flags {
   }
 
   export function getManifest(): Manifest
-  export function getFlags(): { [key: string]: string; }
+  export function getFlags(): Record<string, string>
   export function getFlagFile(): ReadableStream
 }
 
