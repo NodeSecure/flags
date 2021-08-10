@@ -40,9 +40,15 @@ const flags = getFlags();
 const manifest = getManifest();
 // Return the manifest file
 
+async function returnChunk(readable) {
+  for await (const chunk of readable) {
+    return chunk.toString()
+  }
+}
+
 async function getFlagFile() {
-  const flagFile = await getFlagFile('hasBannedFile');
-  return flagFile;
+  const file = await getFlagFile('hasBannedFile')
+  return returnChunk(file)
 }
 // Return the flagFile
 ```

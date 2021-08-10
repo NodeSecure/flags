@@ -1,8 +1,7 @@
+// Import Node.js Dependencies
 import { createReadStream } from 'fs';
 import { join } from 'path';
-
 import { fileURLToPath } from 'url';
-
 import { readFile } from 'fs/promises';
 
 const __dirname = fileURLToPath(import.meta.url);
@@ -24,17 +23,10 @@ export function getFlags() {
 }
 
 // Read specific flag file
-async function returnChunk(readable) {
-  for await (const chunk of readable) {
-    return chunk.toString()
-  }
-}
-
 export function getFlagFile(name) {
   if (!name) {
     throw new Error("You should provide a flag name")
   }
 
-  const stream = createReadStream(join(__dirname, `../src/flags/${name}.html`))
-  return returnChunk(stream)
+  return createReadStream(join(__dirname, `../src/flags/${name}.html`))
 }

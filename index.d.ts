@@ -20,17 +20,18 @@ declare namespace flags {
     "hasBannedFile";
 
   interface FlagObject {
+    emoji: string,
     title: string,
     tooltipDescription: string,
   }
 
   interface Manifest {
-    [k: string]: flagObject
+    [k: string]: FlagObject
   }
 
   export function getManifest(): Manifest
   export function getFlags(): { [key: string]: string; }
-  export function getFlagFile(): string
+  export function getFlagFile(): ReadableStream
 }
 
 export = flags;

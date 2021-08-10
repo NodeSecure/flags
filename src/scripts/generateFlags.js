@@ -1,7 +1,9 @@
+// Import Node.js Dependencies
 import { join } from 'path'
 import { readdir, readFile, writeFile } from 'fs/promises'
 import { fileURLToPath } from 'url';
 
+// Import Third-party Dependencie
 import TurndownService from 'turndown'
 
 const __dirname = fileURLToPath(import.meta.url);
