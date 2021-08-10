@@ -28,7 +28,34 @@ import * as flags from "@nodesecure/flags";
 ```
 
 ## API
-TBC
+
+See TypeScript definition file.
+
+```js
+import { getFlags, getManifest, getFlagFile } from "@nodesecure/flags";
+
+const flags = getFlags();
+// Return a Set of flags title
+
+const manifest = getManifest();
+// Return the manifest file
+
+async function readableToString (readable) {
+  let str = "";
+
+  for await (const chunk of readable) {
+    str += chunk;
+  }
+
+  return str;
+}
+
+async function getFlagFile() {
+  const file = await getFlagFile('hasBannedFile')
+  return returnChunk(file)
+}
+// Return the flagFile
+```
 
 ## License
 MIT
