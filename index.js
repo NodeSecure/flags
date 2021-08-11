@@ -24,10 +24,14 @@ export function getFlags() {
 
 // Read specific flag file
 export function getFlagFile(name) {
-  if (typeof name !== "string") {
+  if (typeof name !== "string" && name) {
     throw new TypeError("You should provide a flag name");
   }
-  const fileName = path.extname(name) === ".html" ? name : `${name}.html`;
+  const kFileName = path.extname(name) === ".html" ? name : `${name}.html`;
+  const kFilePath = path.join(kFlagsPath, kFileName);
 
-  return fs.createReadStream(path.join(kFlagsPath, fileName));
+  return fs.createReadStream(kFilePath)
+    .on("error", () => {
+      throw new Error("There is no file associated with that flagName");
+    });
 }
