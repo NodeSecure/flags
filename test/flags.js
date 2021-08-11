@@ -22,7 +22,7 @@ test("get manifest", (tape) => {
 test("get flag file", async(tape) => {
   // Test getFlagFile without flagName
   try {
-    getFlagFile();
+    await getFlagFile();
     tape.fail("Should not get here since there is no flagName");
   }
   catch (err) {
@@ -31,7 +31,7 @@ test("get flag file", async(tape) => {
 
   // Test getFlagFile with a wrong flagName
   try {
-    getFlagFile("wrongFlagName");
+    await getFlagFile("wrongFlagName");
     tape.fail("Should not get here since this is not a valid flagName");
   }
   catch (err) {
@@ -41,7 +41,16 @@ test("get flag file", async(tape) => {
   tape.end();
 });
 
-test("check if every flags have a valid html file", (tape) => {
+test("check if every flags have a valid html file", async(tape) => {
   const flags = getFlags();
+  for (const flag of flags) {
+    try {
+      await getFlagFile(flag);
+    }
+    catch (err) {
+      console.error(flag);
+      tape.fail(err);
+    }
+  }
   tape.end();
 });

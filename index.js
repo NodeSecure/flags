@@ -22,16 +22,20 @@ export function getFlags() {
   return new Set(Object.values(FLAGS).map((flagDescriptor) => flagDescriptor.title));
 }
 
+async function fileExists(path) {
+  return Boolean(await fs.promises.stat(path).catch(() => false));
+}
+
 // Read specific flag file
-export function getFlagFile(name) {
+export async function getFlagFile(name) {
   if (typeof name !== "string" && name) {
     throw new TypeError("You should provide a flag name");
   }
   const kFileName = path.extname(name) === ".html" ? name : `${name}.html`;
   const kFilePath = path.join(kFlagsPath, kFileName);
 
-  return fs.createReadStream(kFilePath)
-    .on("error", () => {
-      throw new Error("There is no file associated with that flagName");
-    });
+  if (await fileExists(kFilePath)) {
+    return fs.createReadStream(kFilePath);
+  }
+  throw new Error("There is no file associated with that name");
 }
