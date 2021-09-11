@@ -5,6 +5,7 @@
 )
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/flags/blob/master/LICENSE)
 ![dep](https://img.shields.io/david/NodeSecure/flags)
+![build](https://img.shields.io/github/workflow/status/NodeSecure/flags/Node.js%20CI)
 
 NodeSecure security flags.
 
