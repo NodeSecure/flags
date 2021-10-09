@@ -32,7 +32,8 @@ declare namespace flags {
 
   export function getManifest(): Manifest;
   export function getFlags(): Record<string, string>;
-  export function getFlagFile(): ReadableStream;
+  export function lazyFetchFlagFile(name: string): ReadableStream;
+  export function eagerFetchFlagFile(name: string): Promise<string>;
 }
 
 export = flags;

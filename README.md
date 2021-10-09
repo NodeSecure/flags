@@ -25,7 +25,7 @@ $ yarn add @nodesecure/flags
 ## Usage example
 
 ```js
-import { getFlags, getManifest, getFlagFile } from "@nodesecure/flags";
+import { getFlags, getManifest, eagerFetchFlagFile } from "@nodesecure/flags";
 
 // Return a Set of flags title
 const flags = getFlags();
@@ -33,23 +33,7 @@ const flags = getFlags();
 // Return the manifest file
 const manifest = getManifest();
 
-async function readableToString (readable) {
-  let str = "";
-
-  for await (const chunk of readable) {
-    str += chunk;
-  }
-
-  return str;
-}
-
-// Return the flagFile
-async function getFlagFile() {
-  const readStream = getFlagFile("hasBannedFile");
-
-  return await readableToString(readStream);
-}
-const HTML = await getFlagFile();
+const HTML = await eagerFetchFlagFile("hasBannedFile.html");
 ```
 
 ## API

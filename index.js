@@ -12,28 +12,46 @@ const FLAGS = JSON.parse(
   fs.readFileSync(new URL("src/manifest.json", import.meta.url))
 );
 
-// Export src/manifest.json
+/**
+ * @description Export src/manifest.json
+ */
 export function getManifest() {
   return FLAGS;
 }
 
-// Return set flags
+/**
+ * @description Complete list of flags title (as an ES6 Set)
+ */
 export function getFlags() {
   return new Set(Object.values(FLAGS).map((flagDescriptor) => flagDescriptor.title));
 }
 
-// Read specific flag file
-export async function getFlagFile(name) {
+/**
+ * @description lazy read a flag file by getting a Node.js ReadableStream
+ * @param {!string} name flag (HTML File) name
+ */
+export function lazyFetchFlagFile(name) {
   if (typeof name !== "string") {
     throw new TypeError("You should provide a flag name");
   }
-  const FileName = path.extname(name) === ".html" ? name : `${name}.html`;
-  const FilePath = path.join(kFlagsPath, FileName);
 
   const flags = getFlags();
-
-  if (flags.has(name)) {
-    return fs.createReadStream(FilePath);
+  if (!flags.has(name)) {
+    throw new Error("There is no file associated with that name");
   }
-  throw new Error("There is no file associated with that name");
+
+  const fileName = path.extname(name) === ".html" ? name : `${name}.html`;
+
+  return fs.createReadStream(path.join(kFlagsPath, fileName));
+}
+
+export async function eagerFetchFlagFile(name) {
+  const rStream = lazyFetchFlagFile(name);
+  let htmlStr = "";
+
+  for await (const chunk of rStream) {
+    htmlStr += chunk;
+  }
+
+  return htmlStr;
 }
