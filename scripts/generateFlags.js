@@ -18,13 +18,13 @@ const allFlagsContent = await Promise.all(
 
 const turndownService = new TurndownService();
 
-turndownService.addRule("summary", {
-  filter: "summary",
+turndownService.addRule("h1", {
+  filter: "h1",
   replacement: (content) => `<summary>${content}</summary>`
 });
 
-turndownService.addRule("details", {
-  filter: "details",
+turndownService.addRule("div", {
+  filter: "div",
   replacement: (content) => `<details>${content}</details>`
 });
 
