@@ -93,7 +93,7 @@ Under the hood we use the npm package [is-minified-code](https://github.com/Mart
 Files can be found in the **Minified Files** list items of the left menu.
 
   
-![](https://i.imgur.com/e8BbBeb.png)</details> <details><summary>👀 hasMissingOrUnusedDependency</summary>
+![](https://i.imgur.com/e8BbBeb.png)</details><details><summary>👀 hasMissingOrUnusedDependency</summary>
 
 The package has a missing dependency (in package.json) or a dependency that is not used in the code (this may happen if the AST Analysis fail!)
 
@@ -171,7 +171,7 @@ For more information on deprecation please check the official [npm documentation
 Indicate that the package is **also used somewhere else in the dependency tree** but with a different version (like in the screenshot with **yallist**).
 
   
-![](https://camo.githubusercontent.com/933ca23e59bb1ed0159a7b444b783ce740224426/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f70726163746963616c6465762f696d6167652f66657463682f732d2d43477a4e5f4977362d2d2f635f6c696d6974253243665f6175746f253243666c5f70726f6772657373697665253243715f6175746f253243775f3838302f68747470733a2f2f692e696d6775722e636f6d2f3730796e6674542e706e67)</details> <details><summary>☁️ isGit</summary>
+![](https://camo.githubusercontent.com/933ca23e59bb1ed0159a7b444b783ce740224426/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f70726163746963616c6465762f696d6167652f66657463682f732d2d43477a4e5f4977362d2d2f635f6c696d6974253243665f6175746f253243666c5f70726f6772657373697665253243715f6175746f253243775f3838302f68747470733a2f2f692e696d6775722e636f6d2f3730796e6674542e706e67)</details><details><summary>☁️ isGit</summary>
 
 The project has been detected as a GIT repository. Sometimes a dependency on the package.json link to a GIT repository, example:
 
