@@ -8,7 +8,7 @@ export const FLAGS = {
     tooltipDescription: "The package use at least one Node.js dependency capable to communicate outside or to establish a listening server."
   },
   warnings: {
-    emoji: "⚠",
+    emoji: "🚧",
     title: "hasWarnings",
     tooltipDescription: "The AST analysis has detected warnings (suspect import, unsafe regex ..)"
   },
