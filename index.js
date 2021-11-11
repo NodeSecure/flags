@@ -3,14 +3,12 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Import Internal Dependencies
+import { FLAGS } from "./src/manifest.js";
+
 // CONSTANTS
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const kFlagsPath = path.join(__dirname, "src", "flags");
-
-/** @type {flags.Manifest} **/
-const FLAGS = JSON.parse(
-  fs.readFileSync(new URL("src/manifest.json", import.meta.url))
-);
 
 /**
  * @description Export src/manifest.json
