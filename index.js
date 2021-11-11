@@ -8,13 +8,30 @@ import { FLAGS } from "./src/manifest.js";
 
 // CONSTANTS
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const kFlagsPath = path.join(__dirname, "src", "flags");
+const kNotFoundFlags = "🔴";
+const kManifestEmoji = Object.fromEntries(getManifestEmoji());
 
 /**
  * @description Export src/manifest.json
  */
 export function getManifest() {
   return FLAGS;
+}
+
+/**
+ * @example
+ * const kManifestEmoji = Object.fromEntries(getManifestEmoji());
+ */
+export function* getManifestEmoji() {
+  for (const { emoji, title } of Object.values(FLAGS)) {
+    yield [title, emoji];
+  }
+}
+
+export function getEmojiFromTitle(title) {
+  return kManifestEmoji[title] ?? kNotFoundFlags;
 }
 
 /**
