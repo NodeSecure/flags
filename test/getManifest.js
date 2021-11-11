@@ -32,7 +32,6 @@ test("getManifest() should return a Record<string, flagObject>", (tape) => {
 
 test("getManifestEmoji()", (tape) => {
   const manifestEmoji = Object.fromEntries(getManifestEmoji());
-  console.log(manifestEmoji);
 
   tape.true(is.plainObject(manifestEmoji));
   tape.is(manifestEmoji.hasNativeCode, "🐲");

@@ -2,7 +2,6 @@
   "name": "@nodesecure/flags",
   "version": "2.0.0",
   "description": "NodeSecure security flags",
-  "exports": "./index.js",
   "scripts": {
     "test": "cross-env esm-tape-runner 'test/**/*.js' | tap-monkey",
     "coverage": "c8 -r html npm test",
@@ -18,6 +17,14 @@
     "flags",
     "documentation"
   ],
+  "exports": {
+    ".": "./index.js",
+    "./web": "./src/web.js",
+    "./package.json": "./package.json"
+  },
+  "modes": {
+    "web": "src/web.js"
+  },
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "files": [
     "index.d.ts",
