@@ -1,6 +1,6 @@
 {
   "name": "@nodesecure/flags",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "NodeSecure security flags",
   "scripts": {
     "test": "cross-env esm-tape-runner 'test/**/*.js' | tap-monkey",
