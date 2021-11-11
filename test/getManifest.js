@@ -3,7 +3,7 @@ import test from "tape";
 import is from "@slimio/is";
 
 // Import Internal Dependencies
-import { getManifest } from "../index.js";
+import { getManifest, getEmojiFromTitle, getManifestEmoji } from "../index.js";
 
 /**
  * @param {test.Test} tape
@@ -19,13 +19,31 @@ function isFlagObject(tape, flagObject) {
 test("getManifest() should return a Record<string, flagObject>", (tape) => {
   const manifest = getManifest();
 
-  tape.equal(is.plainObject(manifest), true);
+  tape.true(is.plainObject(manifest));
   tape.notEqual(Object.keys(manifest).length, 0);
 
   for (const [key, flagObject] of Object.entries(manifest)) {
     tape.equal(typeof key, "string");
     isFlagObject(tape, flagObject);
   }
+
+  tape.end();
+});
+
+test("getManifestEmoji()", (tape) => {
+  const manifestEmoji = Object.fromEntries(getManifestEmoji());
+  console.log(manifestEmoji);
+
+  tape.true(is.plainObject(manifestEmoji));
+  tape.is(manifestEmoji.hasNativeCode, "🐲");
+
+  tape.end();
+});
+
+
+test("getEmojiFromTitle()", (tape) => {
+  tape.is(getEmojiFromTitle("foobar"), "🔴");
+  tape.is(getEmojiFromTitle("hasNativeCode"), "🐲");
 
   tape.end();
 });

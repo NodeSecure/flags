@@ -31,6 +31,8 @@ declare namespace flags {
   type Manifest = Record<string, FlagObject>;
 
   export function getManifest(): Manifest;
+  export function getManifestEmoji(): IterableIterator<[Flags, string]>;
+  export function getEmojiFromTitle(title: Flags): string;
   export function getFlags(): Record<string, string>;
   export function lazyFetchFlagFile(name: string): ReadableStream;
   export function eagerFetchFlagFile(name: string): Promise<string>;

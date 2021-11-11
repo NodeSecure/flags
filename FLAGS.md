@@ -146,6 +146,10 @@ The package has pre and/or post script in the **package.json** file. These scrip
 *   [Package install scripts vulnerability](https://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability)
 *   [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 
+</details><details><summary>🚨 Vulnerabilities</summary>
+
+Vulnerabilities has been detected for the given package **version**. We are fetching vulnerabilities from the official [Node.js Security-WG repository](https://github.com/nodejs/security-wg)
+
 </details><details><summary>⚠ hasWarnings</summary>
 
 This means that the [SAST](https://www.gartner.com/en/information-technology/glossary/static-application-security-testing-sast) Scanner has detected several problems by analyzing the **Abstract Syntax Tree (AST)** of a JavaScript source code. All warnings are accurately documented [here](https://github.com/fraxken/js-x-ray#warnings-legends-v20).
@@ -191,9 +195,5 @@ This can happen, for example, when the package uses **tags** such as:
 *   @alpha
 *   @beta
 *   @next
-
-</details><details><summary>🚨 Vulnerabilities</summary>
-
-Vulnerabilities has been detected for the given package **version**. We are fetching vulnerabilities from the official [Node.js Security-WG repository](https://github.com/nodejs/security-wg)
 
 </details>
