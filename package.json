@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NodeSecure/i18n.git"
+    "url": "git+https://github.com/NodeSecure/flags.git"
   },
   "keywords": [
     "nodesecure",
@@ -34,9 +34,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NodeSecure/i18n/issues"
+    "url": "https://github.com/NodeSecure/flags/issues"
   },
-  "homepage": "https://github.com/NodeSecure/i18n#readme",
+  "homepage": "https://github.com/NodeSecure/flags#readme",
   "devDependencies": {
     "@nodesecure/eslint-config": "^1.3.0",
     "@slimio/is": "^1.5.1",
