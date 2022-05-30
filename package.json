@@ -18,10 +18,17 @@
     "documentation"
   ],
   "exports": {
-    ".": "./index.js",
-    "./web": "./src/web.js",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./web": {
+      "types": "./src/web.d.ts",
+      "default": "./src/web.js"
+    },
     "./package.json": "./package.json"
   },
+  "types": "./index.d.ts",
   "modes": {
     "web": "src/web.js"
   },
