@@ -19,12 +19,11 @@
   ],
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
+      "import": "./index.js"
     },
     "./web": {
-      "types": "./src/web.d.ts",
-      "default": "./src/web.js"
+      "types": "./web.d.ts",
+      "import": "./src/web.js"
     },
     "./package.json": "./package.json"
   },
@@ -36,6 +35,7 @@
   "files": [
     "index.d.ts",
     "index.js",
+    "web.d.ts",
     "src",
     "FLAGS.md"
   ],
