@@ -5,7 +5,7 @@ export const FLAGS = {
   externalCapacity: {
     emoji: "🌍",
     title: "hasExternalCapacity",
-    tooltipDescription: "The package use at least one Node.js core dependency capable to establish communication outside of localhost"
+    tooltipDescription: "The package uses at least one Node.js core dependency capable to establish communication outside of localhost"
   },
   warnings: {
     emoji: "🚧",
@@ -15,7 +15,7 @@ export const FLAGS = {
   nativeCode: {
     emoji: "🐲",
     title: "hasNativeCode",
-    tooltipDescription: "The package use and run C++ or Rust N-API code"
+    tooltipDescription: "The package uses and runs C++ or Rust N-API code"
   },
   customResolver: {
     emoji: "💎",
@@ -30,12 +30,12 @@ export const FLAGS = {
   multipleLicense: {
     emoji: "📚",
     title: "hasMultipleLicenses",
-    tooltipDescription: "The package has multiple licenses in multiple location (files or manifest)"
+    tooltipDescription: "The package has licenses in multiple locations (files or manifest)"
   },
   minifiedCode: {
     emoji: "🔬",
     title: "hasMinifiedCode",
-    tooltipDescription: "The package have minified and/or uglified files"
+    tooltipDescription: "The package has minified and/or uglified files"
   },
   isDeprecated: {
     emoji: "⛔️",
@@ -55,7 +55,7 @@ export const FLAGS = {
   indirectDependencies: {
     emoji: "🌲",
     title: "hasIndirectDependencies",
-    tooltipDescription: "The package have indirect dependencies"
+    tooltipDescription: "The package has indirect dependencies"
   },
   isGit: {
     emoji: "☁️",
@@ -65,7 +65,7 @@ export const FLAGS = {
   vulnerabilities: {
     emoji: "🚨",
     title: "hasVulnerabilities",
-    tooltipDescription: "The package have one or many vulnerabilities"
+    tooltipDescription: "The package has one or many vulnerabilities"
   },
   missingOrUnusedDependency: {
     emoji: "👀",
