@@ -7,7 +7,7 @@ Because it allows to convey a message while remaining compatible and simple to s
 
 > 👀 click on the arrow to show the complete description
 
-Each summaries title are the name of the flag in the JSON.<details><summary>🌍 hasBannedFile</summary>
+Each summaries title are the name of the flag in the JSON.<details><summary>⚔️ hasBannedFile</summary>
 
 The project has at least one sensitive file (or a file with sensitive information in it).
 
