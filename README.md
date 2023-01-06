@@ -4,7 +4,7 @@
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags/badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags)
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/flags/blob/master/LICENSE)
-![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/flags/node.js.yml)
+![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/flags/main.yml)
 
 NodeSecure security flags.
 
