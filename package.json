@@ -45,14 +45,14 @@
   },
   "homepage": "https://github.com/NodeSecure/flags#readme",
   "devDependencies": {
-    "@nodesecure/eslint-config": "^1.4.0",
+    "@nodesecure/eslint-config": "^1.6.0",
     "@slimio/is": "^1.5.1",
     "@small-tech/esm-tape-runner": "^2.0.0",
     "@small-tech/tap-monkey": "^1.4.0",
-    "c8": "^7.11.3",
+    "c8": "^7.12.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.16.0",
-    "tape": "^5.5.3",
+    "eslint": "^8.32.0",
+    "tape": "^5.6.3",
     "turndown": "^7.1.1"
   },
   "type": "module"
