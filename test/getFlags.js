@@ -1,34 +1,27 @@
-// Import Third-party Dependencies
-import test from "tape";
-import is from "@slimio/is";
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+import assert from "node:assert";
 
 // Import Internal Dependencies
 import { getFlags, getManifest } from "../index.js";
 
-test("getFlags() should return a Set with multiple flags", (tape) => {
-  const flags = getFlags();
-  tape.equal(is.set(flags), true);
-  tape.doesNotEqual(flags.size, 0);
+describe("getFlags()", () => {
+  it("should return a Set with multiple flags", () => {
+    const flags = getFlags();
+    assert.equal(typeof flags, "object");
+    assert.notStrictEqual(flags.size, 0);
+  });
 
-  tape.end();
+  it("should return a Set with only string primitive in it", () => {
+    const flags = getFlags();
+    const allFlagsAreString = [...flags].every((value) => typeof value === "string");
+    assert.equal(allFlagsAreString, true);
+  });
+
+  it("should return the flags (title) from the Manifest", () => {
+    const manifestFlags = getManifest();
+    const equivalentArr = Object.values(manifestFlags).map((flagDescriptor) => flagDescriptor.title);
+    const flags = getFlags();
+    assert.deepEqual([...flags], equivalentArr);
+  });
 });
-
-test("getFlags() should return a Set with only string primitive in it", (tape) => {
-  const flags = getFlags();
-  const allFlagsAreString = [...flags].every((value) => typeof value === "string");
-
-  tape.equal(allFlagsAreString, true);
-
-  tape.end();
-});
-
-test("getFlags() should return the flags (title) from the Manifest", (tape) => {
-  const manifestFlags = getManifest();
-  const equivalentArr = Object.values(manifestFlags).map((flagDescriptor) => flagDescriptor.title);
-  const flags = getFlags();
-
-  tape.deepEqual([...flags], equivalentArr);
-
-  tape.end();
-});
-
