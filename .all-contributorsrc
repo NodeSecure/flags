@@ -56,6 +56,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "MaximeMRF",
+      "name": "Maxime",
+      "avatar_url": "https://avatars.githubusercontent.com/u/57860498?v=4",
+      "profile": "https://github.com/MaximeMRF",
+      "contributions": [
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
