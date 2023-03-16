@@ -1,48 +1,44 @@
-// Import Third-party Dependendies
-import test from "tape";
-import is from "@slimio/is";
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+import assert from "node:assert";
 
 // Import Internal Dependencies
 import { getManifest, getEmojiFromTitle, getManifestEmoji } from "../index.js";
 
-/**
- * @param {test.Test} tape
- */
-function isFlagObject(tape, flagObject) {
-  tape.equal(is.plainObject(flagObject), true);
+function isFlagObject(flagObject) {
+  assert.equal(typeof flagObject, "object");
 
-  tape.equal("emoji" in flagObject, true);
-  tape.equal("title" in flagObject, true);
-  tape.equal("tooltipDescription" in flagObject, true);
+  assert.equal("emoji" in flagObject, true);
+  assert.equal("title" in flagObject, true);
+  assert.equal("tooltipDescription" in flagObject, true);
 }
 
-test("getManifest() should return a Record<string, flagObject>", (tape) => {
-  const manifest = getManifest();
+describe("getManifest()", () => {
+  it("should return a Record<string, flagObject>", () => {
+    const manifest = getManifest();
 
-  tape.true(is.plainObject(manifest));
-  tape.notEqual(Object.keys(manifest).length, 0);
+    assert.equal(typeof manifest, "object");
+    assert.notEqual(Object.keys(manifest).length, 0);
 
-  for (const [key, flagObject] of Object.entries(manifest)) {
-    tape.equal(typeof key, "string");
-    isFlagObject(tape, flagObject);
-  }
-
-  tape.end();
+    for (const [key, flagObject] of Object.entries(manifest)) {
+      assert.equal(typeof key, "string");
+      isFlagObject(flagObject);
+    }
+  });
 });
 
-test("getManifestEmoji()", (tape) => {
-  const manifestEmoji = Object.fromEntries(getManifestEmoji());
+describe("getManifestEmoji()", () => {
+  it("should return a Record<string, emoji>", () => {
+    const manifestEmoji = Object.fromEntries(getManifestEmoji());
 
-  tape.true(is.plainObject(manifestEmoji));
-  tape.is(manifestEmoji.hasNativeCode, "🐲");
-
-  tape.end();
+    assert.equal(typeof manifestEmoji, "object");
+    assert.equal(manifestEmoji.hasNativeCode, "🐲");
+  });
 });
 
-
-test("getEmojiFromTitle()", (tape) => {
-  tape.is(getEmojiFromTitle("foobar"), "🔴");
-  tape.is(getEmojiFromTitle("hasNativeCode"), "🐲");
-
-  tape.end();
+describe("getEmojiFromTitle()", () => {
+  it("should return a emoji", () => {
+    assert.equal(getEmojiFromTitle("foobar"), "🔴");
+    assert.equal(getEmojiFromTitle("hasNativeCode"), "🐲");
+  });
 });
