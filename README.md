@@ -4,7 +4,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/flags/graphs/commit-activity)
 [![OpenSSF
 Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/NodeSecure/flags/blob/master/LICENSE)
+[![mit](https://img.shields.io/github/license/NodeSecure/flags.svg?style=for-the-badge)](https://github.com/NodeSecure/flags/blob/master/LICENSE)
 ![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/flags/main.yml?style=for-the-badge)
 
 NodeSecure security flags.
