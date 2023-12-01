@@ -1,13 +1,24 @@
-# NodeSecure Flags
+<p align="center">
+  <img src="https://github.com/NodeSecure/flags/assets/4438263/5a87c38f-9375-40dc-8cb9-19597b4befe8" alt="@nodesecure/flags">
+</p>
 
-![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/flags/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/flags/graphs/commit-activity)
-[![OpenSSF
-Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags)
-[![mit](https://img.shields.io/github/license/NodeSecure/flags.svg?style=for-the-badge)](https://github.com/NodeSecure/flags/blob/master/LICENSE)
-![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/flags/main.yml?style=for-the-badge)
-
-NodeSecure security flags.
+<p align="center">
+    <a href="https://github.com/NodeSecure/flags">
+      <img src="https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/flags/master/package.json&query=$.version&label=Version" alt="npm version">
+    </a>
+    <a href="https://github.com/NodeSecure/flags/graphs/commit-activity">
+      <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintenance">
+    </a>
+     <a href="https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags">
+      <img src="https://api.securityscorecards.dev/projects/github.com/NodeSecure/flags/badge?style=for-the-badge" alt="ossf scorecard">
+    </a>
+    <a href="https://github.com/NodeSecure/flags/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/NodeSecure/flags.svg?style=for-the-badge" alt="license">
+    </a>
+       <a href="https://github.com/NodeSecure/flags/actions?query=workflow%3A%22Node.js+CI%22">
+      <img src="https://img.shields.io/github/actions/workflow/status/NodeSecure/flags/main.yml?style=for-the-badge" alt="github ci workflow">
+    </a>
+</p>
 
 ## Requirements
 
