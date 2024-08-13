@@ -1,7 +1,8 @@
 // Import Node.js Dependencies
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import fs from "node:fs";
+import path from "node:path";
+import { Readable } from "node:stream";
+import { fileURLToPath } from "node:url";
 
 // Import Internal Dependencies
 import { getFlags } from "./web.js";
@@ -14,7 +15,7 @@ const kFlagsPath = path.join(__dirname, "flags");
  * @description lazy read a flag file by getting a Node.js ReadableStream
  * @param {!string} name flag (HTML File) name
  */
-export function lazyFetchFlagFile(name) {
+export function lazyFetchFlagFile(name: string): Readable {
   if (typeof name !== "string") {
     throw new TypeError("You should provide a flag name");
   }
@@ -29,7 +30,7 @@ export function lazyFetchFlagFile(name) {
   return fs.createReadStream(path.join(kFlagsPath, fileName));
 }
 
-export async function eagerFetchFlagFile(name) {
+export async function eagerFetchFlagFile(name: string): Promise<string> {
   const rStream = lazyFetchFlagFile(name);
   let htmlStr = "";
 

@@ -3,7 +3,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert";
 
 // Import Internal Dependencies
-import { getManifest, getEmojiFromTitle, getManifestEmoji } from "../index.js";
+import { getManifest, getEmojiFromTitle, getManifestEmoji } from "../src/index.js";
 
 function isFlagObject(flagObject) {
   assert.equal(typeof flagObject, "object");

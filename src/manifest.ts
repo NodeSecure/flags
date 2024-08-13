@@ -1,7 +1,14 @@
-/* eslint-disable max-len */
+/* eslint-disable @stylistic/max-len */
 
 /** @type {flags.Manifest} **/
-export const FLAGS = {
+
+export type Flag = {
+  emoji: string;
+  title: string;
+  tooltipDescription: string;
+};
+
+export const FLAGS: Record<string, Flag> = {
   externalCapacity: {
     emoji: "🌍",
     title: "hasExternalCapacity",
