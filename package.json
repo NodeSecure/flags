@@ -6,7 +6,7 @@
     "test": "glob -c \"tsx --test\" \"./test/**/*.spec.ts\"",
     "coverage": "c8 -r html npm test",
     "lint": "eslint index.js",
-    "generateFlags": "node scripts/generateFlags.js"
+    "generateFlags": "tsx scripts/generateFlags.js"
   },
   "repository": {
     "type": "git",

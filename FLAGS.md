@@ -35,11 +35,11 @@ Documentation: [npm-install](https://docs.npmjs.com/cli/install)
 
 The package use a Node.js core package that allow to access the network. These core package are:
 
-*   \- http
-*   \- https
-*   \- net
-*   \- http2
-*   \- dgram
+*   http
+*   https
+*   net
+*   http2
+*   dgram
 
 ⚠️ This flag only work if the AST analysis as successfully retrieved all dependencies as expected.
 
@@ -80,20 +80,7 @@ Minified JavaScript code are commonly used by hacker to obfuscate the code to av
 Example of minified code:
 
   
-![](https://i.imgur.com/13Mxfb2.png)  
-
-⚠️ sometimes one line file are considered minified (we are working to fix this in the future).
-
-  
-
-Under the hood we use the npm package [is-minified-code](https://github.com/MartinKolarik/is-minified-code/).
-
-  
-
-Files can be found in the **Minified Files** list items of the left menu.
-
-  
-![](https://i.imgur.com/e8BbBeb.png)</details><details><summary>👀 hasMissingOrUnusedDependency</summary>
+![](https://i.imgur.com/13Mxfb2.png)</details><details><summary>👀 hasMissingOrUnusedDependency</summary>
 
 The package has a missing dependency (in package.json) or a dependency that is not used in the code (this may happen if the AST Analysis fail!)
 
@@ -109,7 +96,7 @@ Example: ISC OR GPL-2.0-with-GCC-exception.
 
   
 
-Under the hood we use [conformance](https://github.com/cutenode/conformance#readme) to parse licenses !
+Under the hood we use [@nodesecure/licenses-conformance](https://github.com/NodeSecure/licenses-conformance) to assert licenses conformance!
 
 </details><details><summary>🐲 hasNativeCode</summary>
 
@@ -119,9 +106,9 @@ The package use native components (package, file, configuration) like **binding.
 
 The flag is set to true if:
 
-*   \- One of the package file has an extension like .c, .cpp, .gyp (etc..)
-*   \- One of the package dependency is known for building native addons.
-*   \- The package.json file has the property "gypfile" set to **true**.
+*   One of the package file has an extension like .c, .cpp, .gyp (etc..)
+*   One of the package dependency is known for building native addons.
+*   The package.json file has the property "gypfile" set to **true**.
 
 </details><details><summary>📜 hasNoLicense</summary>
 
@@ -135,10 +122,6 @@ The code and logic behind the detection is handled in the [npm-tarball-license-p
 
 For more information on how license must be described in the package.json, please check the [npm documentation](https://docs.npmjs.com/files/package.json#license).
 
-  
-
-⚠️ we are working to stabilize this flag !
-
 </details><details><summary>📦 hasScript</summary>
 
 The package has pre and/or post script in the **package.json** file. These script will be executed before or after the installation of a dependency (this is useful for example to build native addons or similar things). However these script may be used to execute malicious code on your system.
@@ -148,7 +131,18 @@ The package has pre and/or post script in the **package.json** file. These scrip
 
 </details><details><summary>🚨 Vulnerabilities</summary>
 
-Vulnerabilities has been detected for the given package **version**. We are fetching vulnerabilities from the official [Node.js Security-WG repository](https://github.com/nodejs/security-wg)
+Vulnerabilities has been detected for the given package **version**. We are fetching vulnerabilities from multiple sources using NodeSecure [vulnera](https://github.com/NodeSecure/vulnera).
+
+  
+
+Available source are
+
+*   GitHub Audit (previously NPM Audit)
+*   Sonatype DB
+*   Snyk
+*   Node.js Security-WG DB **(DEPRECATED)**
+
+We currently working to implement NVD and [OSV](https://osv.dev/).
 
 </details><details><summary>⚠ hasWarnings</summary>
 
@@ -180,6 +174,11 @@ Indicate that the package is **also used somewhere else in the dependency tree**
 The project has been detected as a GIT repository. Sometimes a dependency on the package.json link to a GIT repository, example:
 
   
+
+      `{           "dependencies": {             "zen-observable": "^0.8.15",             "nanoid": "github:ai/nanoid",             "js-x-ray": "git://github.com/NodeSecure/js-x-ray.git",             "nanodelay": "git+ssh://git@github.com:ai/nanodelay.git",             "nanoevents": "git+https://github.com/ai/nanoevents.git"           }         }`
+      
+    
+
 ![](https://i.imgur.com/ww4UtyR.png)  
 
 Because under the hood we use [pacote](https://github.com/npm/pacote#readme) to fetch and extract packages we are supporting this given pattern.
