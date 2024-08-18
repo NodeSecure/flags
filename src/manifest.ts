@@ -1,6 +1,13 @@
-/* eslint-disable max-len */
+export type FlagDescriptor = {
+  /** An emoji to visually identify the anomaly **/
+  emoji: string;
+  /** Title (or name) of the flag **/
+  title: string;
+  /** Short description/warning of the anomaly **/
+  tooltipDescription: string;
+};
+export type Flag = keyof typeof FLAGS | (string & {});
 
-/** @type {flags.Manifest} **/
 export const FLAGS = {
   externalCapacity: {
     emoji: "🌍",
@@ -92,4 +99,4 @@ export const FLAGS = {
     title: "isDuplicated",
     tooltipDescription: "The package is also used somewhere else in the dependency tree but with a different version"
   }
-};
+} satisfies Record<string, FlagDescriptor>;

@@ -3,15 +3,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert";
 
 // Import Internal Dependencies
-import { getManifest, getEmojiFromTitle, getManifestEmoji } from "../index.js";
-
-function isFlagObject(flagObject) {
-  assert.equal(typeof flagObject, "object");
-
-  assert.equal("emoji" in flagObject, true);
-  assert.equal("title" in flagObject, true);
-  assert.equal("tooltipDescription" in flagObject, true);
-}
+import { getManifest, getEmojiFromTitle, getManifestEmoji, FlagDescriptor } from "../src/index.js";
 
 describe("getManifest()", () => {
   it("should return a Record<string, flagObject>", () => {
@@ -22,7 +14,7 @@ describe("getManifest()", () => {
 
     for (const [key, flagObject] of Object.entries(manifest)) {
       assert.equal(typeof key, "string");
-      isFlagObject(flagObject);
+      assertFlagDescriptor(flagObject);
     }
   });
 });
@@ -42,3 +34,13 @@ describe("getEmojiFromTitle()", () => {
     assert.equal(getEmojiFromTitle("hasNativeCode"), "🐲");
   });
 });
+
+function assertFlagDescriptor(
+  flagObject: FlagDescriptor
+): void {
+  assert.equal(typeof flagObject, "object");
+
+  assert.equal("emoji" in flagObject, true);
+  assert.equal("title" in flagObject, true);
+  assert.equal("tooltipDescription" in flagObject, true);
+}
