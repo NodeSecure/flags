@@ -96,7 +96,7 @@ Example: ISC OR GPL-2.0-with-GCC-exception.
 
   
 
-Under the hood we use [@nodesecure/licenses-conformance](https://github.com/NodeSecure/licenses-conformance) to assert licenses conformance!
+Under the hood we use [`@nodesecure/conformance`](https://github.com/NodeSecure/scanner/tree/master/workspaces/conformance) to assert licenses conformance!
 
 </details><details><summary>🐲 hasNativeCode</summary>
 
@@ -116,7 +116,7 @@ This flag mean that we have not detected any licenses in the npm Tarball (or som
 
   
 
-The code and logic behind the detection is handled in the [npm-tarball-license-parser](https://github.com/fraxken/npm-tarball-license-parser) package.
+The code and logic behind the detection is handled in the [`@nodesecure/tarball`](https://github.com/NodeSecure/scanner/tree/master/workspaces/tarball) package.
 
   
 
@@ -146,7 +146,7 @@ We currently working to implement NVD and [OSV](https://osv.dev/).
 
 </details><details><summary>⚠ hasWarnings</summary>
 
-This means that the [SAST](https://www.gartner.com/en/information-technology/glossary/static-application-security-testing-sast) Scanner has detected several problems by analyzing the **Abstract Syntax Tree (AST)** of a JavaScript source code. All warnings are accurately documented [here](https://github.com/fraxken/js-x-ray#warnings-legends-v20).
+This means that the [SAST](https://www.gartner.com/en/information-technology/glossary/static-application-security-testing-sast) Scanner has detected several problems by analyzing the **Abstract Syntax Tree (AST)** of a JavaScript source code. All warnings are accurately documented [here](https://github.com/NodeSecure/js-x-ray#legends).
 
 </details><details><summary>💀 isDead</summary>
 
