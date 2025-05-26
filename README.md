@@ -50,9 +50,7 @@ const HTML = await eagerFetchFlagFile("hasBannedFile.html");
 
 ## API
 
-### Core Functions
-
-#### `getFlags(): Set<Flag>`
+### `getFlags(): Set<Flag>`
 
 Returns a Set containing all available flag titles.
 
@@ -83,7 +81,7 @@ console.log(flags);
 // }
 ```
 
-#### `getManifest(): Record<string, FlagDescriptor>`
+### `getManifest(): Record<string, FlagDescriptor>`
 
 Returns the complete manifest object containing all flag descriptors.
 
@@ -99,7 +97,7 @@ console.log(manifest.nativeCode);
 // }
 ```
 
-#### `getEmojiFromTitle(title: Flag): string`
+### `getEmojiFromTitle(title: Flag): string`
 
 Returns the emoji associated with a flag title. Returns "🔴" if the flag is not found.
 
@@ -110,7 +108,7 @@ console.log(getEmojiFromTitle("hasNativeCode")); // "🐲"
 console.log(getEmojiFromTitle("unknownFlag")); // "🔴"
 ```
 
-#### `getManifestEmoji(): IterableIterator<[string, string]>`
+### `getManifestEmoji(): IterableIterator<[string, string]>`
 
 Returns an iterator of [title, emoji] pairs for all flags.
 
@@ -129,7 +127,7 @@ console.log(emojiMap);
 
 ### File Operations (Node.js only)
 
-#### `eagerFetchFlagFile(name: string): Promise<string>`
+### `eagerFetchFlagFile(name: string): Promise<string>`
 
 Asynchronously reads and returns the HTML content of a flag file.
 
@@ -140,7 +138,7 @@ const htmlContent = await eagerFetchFlagFile("hasNativeCode");
 console.log(htmlContent); // Returns the HTML documentation for the flag
 ```
 
-#### `lazyFetchFlagFile(name: string): Readable`
+### `lazyFetchFlagFile(name: string): Readable`
 
 Returns a Node.js Readable stream for a flag file, allowing for memory-efficient processing of large files.
 
@@ -153,11 +151,11 @@ stream.on('data', (chunk) => {
 });
 ```
 
-### Types
+## Types
 
-#### `FlagDescriptor`
+### `FlagDescriptor`
 
-```typescript
+```ts
 interface FlagDescriptor {
   /** An emoji to visually identify the anomaly */
   emoji: string;
@@ -168,9 +166,9 @@ interface FlagDescriptor {
 }
 ```
 
-#### `Flag`
+### `Flag`
 
-```typescript
+```ts
 type Flag = keyof typeof FLAGS | (string & {});
 ```
 
@@ -197,7 +195,7 @@ type Flag = keyof typeof FLAGS | (string & {});
 | `isOutdated` | ⌚️ | The current package version is not equal to the package latest version |
 | `isDuplicated` | 🎭 | The package is also used somewhere else in the dependency tree but with a different version |
 
-### Error Handling
+## Error Handling
 
 - `lazyFetchFlagFile()` and `eagerFetchFlagFile()` will throw a `TypeError` if no flag name is provided
 - `lazyFetchFlagFile()` and `eagerFetchFlagFile()` will throw an `Error` if the provided flag doesn't exist
