@@ -77,7 +77,7 @@ console.log(flags);
 //   'isDead',
 //   'hasBannedFile',
 //   'isOutdated',
-//   'isDuplicated'
+//   'hasDuplicate'
 // }
 ```
 
@@ -193,7 +193,7 @@ type Flag = keyof typeof FLAGS | (string & {});
 | `isDead` | 💀 | The dependency has not received update from at least one year |
 | `hasBannedFile` | ⚔️ | The project has at least one sensitive file |
 | `isOutdated` | ⌚️ | The current package version is not equal to the package latest version |
-| `isDuplicated` | 🎭 | The package is also used somewhere else in the dependency tree but with a different version |
+| `hasDuplicate` | 🎭 | The package is also used somewhere else in the dependency tree but with a different version |
 
 ## Error Handling
 

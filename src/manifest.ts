@@ -12,7 +12,8 @@ export const FLAGS = {
   externalCapacity: {
     emoji: "🌍",
     title: "hasExternalCapacity",
-    tooltipDescription: "The package uses at least one Node.js core dependency capable to establish communication outside of localhost"
+    tooltipDescription: "The package uses at least one Node.js core dependency " +
+      "capable to establish communication outside of localhost"
   },
   warnings: {
     emoji: "🚧",
@@ -96,7 +97,7 @@ export const FLAGS = {
   },
   duplicated: {
     emoji: "🎭",
-    title: "isDuplicated",
+    title: "hasDuplicate",
     tooltipDescription: "The package is also used somewhere else in the dependency tree but with a different version"
   }
 } satisfies Record<string, FlagDescriptor>;
