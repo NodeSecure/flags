@@ -164,7 +164,7 @@ The given npm package has been deprecated by his author (it must be updated or r
 
 For more information on deprecation please check the official [npm documentation](https://docs.npmjs.com/deprecating-and-undeprecating-packages-or-package-versions).
 
-</details><details><summary>🎭 isDuplicate</summary>
+</details><details><summary>🎭 hasDuplicate</summary>
 
 Indicate that the package is **also used somewhere else in the dependency tree** but with a different version (like in the screenshot with **yallist**).
 
