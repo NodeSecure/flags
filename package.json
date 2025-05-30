@@ -3,6 +3,8 @@
   "version": "3.0.0",
   "description": "NodeSecure security flags",
   "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc",
     "test": "glob -c \"tsx --test\" \"./test/**/*.spec.ts\"",
     "coverage": "c8 -r html npm test",
     "lint": "eslint index.js",
