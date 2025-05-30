@@ -1,6 +1,6 @@
 {
   "name": "@nodesecure/flags",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "NodeSecure security flags",
   "scripts": {
     "prepublishOnly": "npm run build",
