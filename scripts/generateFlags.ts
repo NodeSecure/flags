@@ -46,5 +46,5 @@ async function loadHTMLs() {
   return {
     flags: HTMLFlagsFiles.join(""),
     headerTemplate
-  }
+  };
 }

@@ -8,13 +8,10 @@
     ],
   },
   "include": [
-    "src",
-    "src/flags/**.html"
+    "src"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "eslint.config.mjs",
-    "scripts"
+    "dist"
   ]
 }

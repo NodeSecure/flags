@@ -4,7 +4,7 @@
   "description": "NodeSecure security flags",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "tsc",
+    "build": "tsc & cp -R ./src/flags ./dist/flags",
     "test": "glob -c \"tsx --test\" \"./test/**/*.spec.ts\"",
     "coverage": "c8 -r html npm test",
     "lint": "eslint index.js",
