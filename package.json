@@ -21,17 +21,17 @@
   ],
   "exports": {
     ".": {
-      "import": "./index.js"
+      "import": "./dist/index.js"
     },
     "./web": {
-      "types": "./web.d.ts",
-      "import": "./src/web.js"
+      "types": "./dist/web.d.ts",
+      "import": "./dist/web.js"
     },
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
   "modes": {
-    "web": "src/web.js"
+    "web": "dist/web.js"
   },
   "author": "GENTILHOMME Thomas <gentilhomme.thomas@gmail.com>",
   "files": [
